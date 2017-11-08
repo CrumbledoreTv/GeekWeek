@@ -88,9 +88,19 @@ class Projet
     */
     private $salaries;
 
+    /**
+    * @ORM\OneToMany(targetEntity="Tache", mappedBy="projet")
+    */
+    private $taches;
+
     public function __construct()
     {
         $this->salaries = new ArrayCollection();
+    }
+
+    public function __construct()
+    {
+        $this->taches = new ArrayCollection();
     }
 
     /**
@@ -317,5 +327,13 @@ class Projet
     public function getSalaries()
     {
         return $this->salaries;
+    }
+
+    /**
+     * Get taches
+     */
+    public function getTaches()
+    {
+        return $this->taches;
     }
 }

@@ -91,6 +91,11 @@ class Tache
      */
     private $commentaireTache;
 
+    /**
+    * @ORM\ManyToOne(targetEntity="Projet", inversedBy="taches")
+    */
+    private $projet;
+
 
     /**
      * Get id
@@ -341,5 +346,20 @@ class Tache
     {
         return $this->commentaireTache;
     }
-}
 
+    /**
+     * Set projet
+     */
+    public function setClient(Projet $projet)
+    {
+        $this->projet = $projet;
+    }
+
+    /**
+     * Get projet
+     */
+    public function getProjet()
+    {
+        return $this->projet;
+    }
+}
