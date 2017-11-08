@@ -96,10 +96,6 @@ class Projet
     public function __construct()
     {
         $this->salaries = new ArrayCollection();
-    }
-
-    public function __construct()
-    {
         $this->taches = new ArrayCollection();
     }
 
