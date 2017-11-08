@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Projet
@@ -82,6 +83,15 @@ class Projet
     */
     private $client;
 
+    /**
+    * @ORM\OneToMany(targetEntity="Salarie", mappedBy="projet")
+    */
+    private $salaries;
+
+    public function __construct()
+    {
+        $this->salaries = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -299,5 +309,13 @@ class Projet
     public function getClient()
     {
         return $this->client;
+    }
+
+    /**
+     * Get salaries
+     */
+    public function getSalaries()
+    {
+        return $this->salaries;
     }
 }

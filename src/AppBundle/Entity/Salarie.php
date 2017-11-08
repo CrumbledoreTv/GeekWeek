@@ -133,6 +133,15 @@ class Salarie
      */
     private $commentaireSalarie;
 
+    /**
+    * @ORM\OneToMany(targetEntity="Projet", mappedBy="salarie")
+    */
+    private $projets;
+
+    public function __construct()
+    {
+        $this->projets = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -526,5 +535,13 @@ class Salarie
     public function getCommentaireSalarie()
     {
         return $this->commentaireSalarie;
+    }
+
+    /**
+     * Get projets
+     */
+    public function getProjets()
+    {
+        return $this->projets;
     }
 }
