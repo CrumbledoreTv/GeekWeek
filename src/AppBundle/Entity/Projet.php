@@ -77,6 +77,11 @@ class Projet
      */
     private $commentaireProjet;
 
+    /**
+    * @ORM\ManyToOne(targetEntity="Client", inversedBy="projets")
+    */
+    private $client;
+
 
     /**
      * Get id
@@ -279,5 +284,20 @@ class Projet
     {
         return $this->commentaireProjet;
     }
-}
 
+    /**
+     * Set client
+     */
+    public function setClient(Client $client)
+    {
+        $this->client = $client;
+    }
+
+    /**
+     * Get client
+     */
+    public function getClient()
+    {
+        return $this->client;
+    }
+}

@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Client
@@ -112,6 +113,15 @@ class Client
      */
     private $commentaireClient;
 
+    /**
+    * @ORM\OneToMany(targetEntity="Projet", mappedBy="client")
+    */
+    private $projets;
+
+    public function __construct()
+    {
+        $this->projets = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -434,5 +444,12 @@ class Client
     {
         return $this->commentaireClient;
     }
-}
 
+    /**
+     * Get projets
+     */
+    public function getProjets()
+    {
+        return $this->projets;
+    }
+}
