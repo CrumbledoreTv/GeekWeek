@@ -24,12 +24,19 @@ class ProjetAdmin extends AbstractAdmin
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('libelle_projet');
+        // $datagridMapper->add('libelle_projet');
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('libelle_projet');
+        $listMapper
+                  ->addIdentifier('libelle_projet')
+                  ->add('description_projet', 'text')
+                  ->add('date_debut_projet', 'date')
+                  ->add('date_fin_prevue_projet', 'date')
+                  ->add('date_creation_projet', 'date')
+                  ->add('commentaire_projet', 'text')
+                  ;
     }
 
     public function toString($object)
