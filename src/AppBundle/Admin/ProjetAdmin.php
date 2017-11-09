@@ -13,12 +13,20 @@ class ProjetAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
+                  ->with('Informations :', array('class' => 'col-md-8'))
                   ->add('libelle_projet', 'text')
+                  ->add('client', 'sonata_type_model', array(
+                        'class' => 'AppBundle\Entity\Client',
+                        'property' => 'societe_client',))
                   ->add('description_projet', 'text')
+                  ->add('commentaire_projet', 'text')
+                  ->end()
+
+                  ->with('Dates :', array('class' => 'col-md-4'))
+                  ->add('date_creation_projet', 'date')
                   ->add('date_debut_projet', 'date')
                   ->add('date_fin_prevue_projet', 'date')
-                  ->add('date_creation_projet', 'date')
-                  ->add('commentaire_projet', 'text')
+                  ->end()
                   ;
     }
 
@@ -35,7 +43,7 @@ class ProjetAdmin extends AbstractAdmin
                   ->add('date_debut_projet', 'date')
                   ->add('date_fin_prevue_projet', 'date')
                   ->add('date_creation_projet', 'date')
-                  ->add('commentaire_projet', 'text')
+                  ->add('client.societe_client')
                   ;
     }
 

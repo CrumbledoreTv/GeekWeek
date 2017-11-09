@@ -13,24 +13,41 @@ class ClientAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
+              ->tab('Informations')
+                  ->with('Informations :', array('class' => 'col-md-12'))
                   ->add('societe_client', 'text')
                   ->add('civilite_client', 'text')
                   ->add('nom_client', 'text')
                   ->add('prenom_client', 'text')
+                  ->end()
+              ->end()
+
+              ->tab('Adresse / Contact')
+                  ->with('Adresse :', array('class' => 'col-md-6'))
                   ->add('rue_societe_client', 'text')
                   ->add('ville_societe_client', 'text')
                   ->add('cp_societe_client', 'text')
+                  ->end()
+
+                  ->with('Contacts :', array('class' => 'col-md-6'))
                   ->add('telephone_contact_societe_client', 'text')
                   ->add('mobile_contact_societe_client', 'text')
                   ->add('mail_contact_societe_client', 'text')
+                  ->end()
+              ->end()
+
+              ->tab('Détails')
+                  ->with('Détails :', array('class' => 'col-md-12'))
                   ->add('date_creation_client', 'date')
                   ->add('commentaire_client', 'text')
+                  ->end()
+              ->end()
                   ;
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        // $datagridMapper->add('libelle_projet');
+        // $datagridMapper->add('societe_client');
     }
 
     protected function configureListFields(ListMapper $listMapper)
