@@ -136,8 +136,8 @@ class Salarie
     private $commentaireSalarie;
 
     /**
-    * @ORM\OneToMany(targetEntity="Projet", mappedBy="salarie")
-    */
+     * @ORM\ManyToMany(targetEntity="Projet")
+     */
     private $projets;
 
     public function __construct()

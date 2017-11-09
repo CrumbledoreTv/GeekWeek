@@ -57,11 +57,11 @@ class SalarieAdmin extends AbstractAdmin
     {
         $listMapper
                   ->addIdentifier('nom_salarie')
+                  ->add('civilite_salarie', 'text')
                   ->add('date_naissance_salarie', 'date')
-                  ->add('date_debut_projet', 'date')
-                  ->add('date_fin_prevue_projet', 'date')
-                  ->add('date_creation_projet', 'date')
-                  ->add('client.societe_client')
+                  ->add('numero_securite_sociale_salarie', 'text')
+                  ->add('telephone_salarie', 'text')
+                  ->add('mail_salarie', 'text')
                   ;
     }
 

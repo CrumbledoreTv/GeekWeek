@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use AppBundle\Entity\Salarie;
 
 /**
  * Projet
@@ -84,7 +85,7 @@ class Projet
     private $client;
 
     /**
-    * @ORM\OneToMany(targetEntity="Salarie", mappedBy="projet")
+    * @ORM\ManyToMany(targetEntity="Salarie")
     */
     private $salaries;
 

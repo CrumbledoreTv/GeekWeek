@@ -19,10 +19,12 @@ class ProjetAdmin extends AbstractAdmin
                     ->add('libelle_projet', 'text')
                     ->add('client', 'sonata_type_model', array(
                           'class' => 'AppBundle\Entity\Client',
+                          'multiple' => false,
                           'property' => 'societe_client',))
                     ->add('salaries', 'sonata_type_model', array(
                           'class' => 'AppBundle\Entity\Salarie',
-                          'label' => 'Responsable du projet',
+                          'multiple' => true,
+                          'label' => 'Salaries',
                           'property' => 'nom_salarie',))
                     ->add('description_projet', 'textarea')
                     ->add('commentaire_projet', 'textarea')
