@@ -15,18 +15,21 @@ class TacheAdmin extends AbstractAdmin
         $formMapper
                 ->tab('Informations')
                     ->with('Informations :', array('class' => 'col-md-12'))
-                    ->add('libelle_tache', 'text')
-                    ->add('description_tache', 'text')
-                    ->add('status_tache', 'text')
+                      ->add('libelle_tache', 'text')
+                      ->add('projet', 'sonata_type_model', array(
+                            'class' => 'AppBundle\Entity\Projet',
+                            'property' => 'libelle_projet',))
+                      ->add('description_tache', 'textarea')
+                      ->add('status_tache', 'text')
                     ->end()
                 ->end()
 
                 ->tab('Détails')
                     ->with('Détails :', array('class' => 'col-md-12'))
-                    ->add('date_debut_tache', 'date')
-                    ->add('date_fin_tache', 'date')
-                    ->add('date_creation_tache', 'date')
-                    ->add('commentaire_tache', 'text')
+                      ->add('date_debut_tache', 'date')
+                      ->add('date_fin_tache', 'date')
+                      ->add('date_creation_tache', 'date')
+                      ->add('commentaire_tache', 'textarea')
                     ->end()
                 ->end()
                   ;
@@ -41,6 +44,9 @@ class TacheAdmin extends AbstractAdmin
     {
         $listMapper
                   ->addIdentifier('libelle_tache', 'text')
+                  ->add('projet', 'sonata_type_model', array(
+                        'class' => 'AppBundle\Entity\Projet',
+                        'property' => 'libelle_projet',))
                   ->add('description_tache', 'text')
                   ->add('status_tache', 'text')
                   ->add('commentaire_tache', 'text')
@@ -51,6 +57,6 @@ class TacheAdmin extends AbstractAdmin
     {
       return $object instanceof Tache
         ? $object->getLibelleTache()
-        : 'Tache';
+        : 'Taches';
     }
 }

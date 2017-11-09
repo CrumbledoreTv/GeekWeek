@@ -7,6 +7,8 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use AppBundle\Entity\Projet;
+use AppBundle\Entity\Tache;
+use AppBundle\Entity\Salarie;
 
 class ProjetAdmin extends AbstractAdmin
 {
@@ -14,18 +16,22 @@ class ProjetAdmin extends AbstractAdmin
     {
         $formMapper
                   ->with('Informations :', array('class' => 'col-md-8'))
-                  ->add('libelle_projet', 'text')
-                  ->add('client', 'sonata_type_model', array(
-                        'class' => 'AppBundle\Entity\Client',
-                        'property' => 'societe_client',))
-                  ->add('description_projet', 'text')
-                  ->add('commentaire_projet', 'text')
+                    ->add('libelle_projet', 'text')
+                    ->add('client', 'sonata_type_model', array(
+                          'class' => 'AppBundle\Entity\Client',
+                          'property' => 'societe_client',))
+                    ->add('salaries', 'sonata_type_model', array(
+                          'class' => 'AppBundle\Entity\Salarie',
+                          'label' => 'Responsable du projet',
+                          'property' => 'nom_salarie',))
+                    ->add('description_projet', 'textarea')
+                    ->add('commentaire_projet', 'textarea')
                   ->end()
 
                   ->with('Dates :', array('class' => 'col-md-4'))
-                  ->add('date_creation_projet', 'date')
-                  ->add('date_debut_projet', 'date')
-                  ->add('date_fin_prevue_projet', 'date')
+                    ->add('date_creation_projet', 'date')
+                    ->add('date_debut_projet', 'date')
+                    ->add('date_fin_prevue_projet', 'date')
                   ->end()
                   ;
     }

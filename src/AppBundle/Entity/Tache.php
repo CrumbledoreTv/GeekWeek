@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use AppBundle\Entity\Projet;
 
 /**
  * Tache
@@ -44,9 +45,9 @@ class Tache
     private $statusTache;
 
     /**
-     * @var bool
+     * @var string
      *
-     * @ORM\Column(name="cloturee_tache", type="boolean")
+     * @ORM\Column(name="cloturee_tache", type="string", nullable=true)
      */
     private $clotureeTache;
 

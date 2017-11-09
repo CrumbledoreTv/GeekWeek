@@ -37,6 +37,7 @@ services:
             - { name: sonata.admin, manager_type: orm, label: Projets }
         public: true
 
+    # class ClientAdmin
     admin.client:
         class: AppBundle\Admin\ClientAdmin
         arguments: [~, AppBundle\Entity\Client, ~]
@@ -44,9 +45,18 @@ services:
             - { name: sonata.admin, manager_type: orm, label: Clients }
         public: true
 
+    # class TacheAdmin
     admin.tache:
         class: AppBundle\Admin\TacheAdmin
         arguments: [~, AppBundle\Entity\Tache, ~]
         tags:
             - { name: sonata.admin, manager_type: orm, label: Taches }
+        public: true
+
+    # class SalarieAdmin
+    admin.salarie:
+        class: AppBundle\Admin\SalarieAdmin
+        arguments: [~, AppBundle\Entity\Salarie, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Salaries }
         public: true
