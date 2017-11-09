@@ -34,5 +34,12 @@ services:
         class: AppBundle\Admin\ProjetAdmin
         arguments: [~, AppBundle\Entity\Projet, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Projet }
+            - { name: sonata.admin, manager_type: orm, label: Projets }
+        public: true
+
+    admin.client:
+        class: AppBundle\Admin\ClientAdmin
+        arguments: [~, AppBundle\Entity\Client, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Clients }
         public: true

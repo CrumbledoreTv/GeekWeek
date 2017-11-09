@@ -43,6 +43,6 @@ class ProjetAdmin extends AbstractAdmin
     {
       return $object instanceof Projet
         ? $object->getLibelleProjet()
-        : 'Projet';
+        : 'Projets';
     }
 }
