@@ -354,4 +354,5 @@ class Projet
     {
         return $this->taches;
     }
+
 }

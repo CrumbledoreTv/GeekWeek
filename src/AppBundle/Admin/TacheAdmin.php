@@ -18,6 +18,7 @@ class TacheAdmin extends AbstractAdmin
                       ->add('libelle_tache', 'text')
                       ->add('projet', 'sonata_type_model', array(
                             'class' => 'AppBundle\Entity\Projet',
+                            'multiple' => false,
                             'property' => 'libelle_projet',))
                       ->add('description_tache', 'textarea')
                       ->add('status_tache', 'text')
@@ -44,9 +45,7 @@ class TacheAdmin extends AbstractAdmin
     {
         $listMapper
                   ->addIdentifier('libelle_tache', 'text')
-                  ->add('projet', 'sonata_type_model', array(
-                        'class' => 'AppBundle\Entity\Projet',
-                        'property' => 'libelle_projet',))
+                  ->add('projet.libelle_projet')
                   ->add('description_tache', 'text')
                   ->add('status_tache', 'text')
                   ->add('commentaire_tache', 'text')

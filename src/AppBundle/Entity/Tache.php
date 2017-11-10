@@ -98,7 +98,6 @@ class Tache
     */
     private $projet;
 
-
     /**
      * Get id
      *
@@ -352,7 +351,7 @@ class Tache
     /**
      * Set projet
      */
-    public function setClient(Projet $projet)
+    public function setProjet(Projet $projet)
     {
         $this->projet = $projet;
     }

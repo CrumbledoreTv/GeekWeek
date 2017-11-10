@@ -52,11 +52,11 @@ class ProjetAdmin extends AbstractAdmin
     {
         $listMapper
                   ->addIdentifier('libelle_projet')
-                  ->add('description_projet', 'text')
+                  ->add('client.societe_client')
                   ->add('date_debut_projet', 'date')
                   ->add('date_fin_prevue_projet', 'date')
                   ->add('responsable.nom_salarie')
-                  ->add('client.societe_client')
+                  ->add('description_projet', 'text')
                   ;
     }
 
