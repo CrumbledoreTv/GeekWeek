@@ -85,6 +85,11 @@ class Projet
     private $client;
 
     /**
+    * @ORM\ManyToOne(targetEntity="Salarie", inversedBy="projetsResp")
+    */
+    private $responsable;
+
+    /**
     * @ORM\ManyToMany(targetEntity="Salarie")
     */
     private $salaries;
@@ -316,6 +321,22 @@ class Projet
     public function getClient()
     {
         return $this->client;
+    }
+
+    /**
+     * Set responsable
+     */
+    public function setResponsable(Salarie $responsable)
+    {
+        $this->responsable = $responsable;
+    }
+
+    /**
+     * Get responsable
+     */
+    public function getResponsable()
+    {
+        return $this->responsable;
     }
 
     /**

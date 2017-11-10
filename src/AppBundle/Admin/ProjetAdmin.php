@@ -21,6 +21,11 @@ class ProjetAdmin extends AbstractAdmin
                           'class' => 'AppBundle\Entity\Client',
                           'multiple' => false,
                           'property' => 'societe_client',))
+                    ->add('responsable', 'sonata_type_model', array(
+                          'class' => 'AppBundle\Entity\Salarie',
+                          'multiple' => false,
+                          'label' => 'Responsable projet',
+                          'property' => 'nom_salarie',))
                     ->add('salaries', 'sonata_type_model', array(
                           'class' => 'AppBundle\Entity\Salarie',
                           'multiple' => true,
@@ -50,7 +55,7 @@ class ProjetAdmin extends AbstractAdmin
                   ->add('description_projet', 'text')
                   ->add('date_debut_projet', 'date')
                   ->add('date_fin_prevue_projet', 'date')
-                  ->add('date_creation_projet', 'date')
+                  ->add('responsable.nom_salarie')
                   ->add('client.societe_client')
                   ;
     }

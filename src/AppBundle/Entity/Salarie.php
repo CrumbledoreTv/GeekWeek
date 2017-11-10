@@ -136,6 +136,11 @@ class Salarie
     private $commentaireSalarie;
 
     /**
+    * @ORM\OneToMany(targetEntity="Projet", mappedBy="responsable")
+    */
+    private $projetsResp;
+
+    /**
      * @ORM\ManyToMany(targetEntity="Projet")
      */
     private $projets;
@@ -143,6 +148,7 @@ class Salarie
     public function __construct()
     {
         $this->projets = new ArrayCollection();
+        $this->projetsResp = new ArrayCollection();
     }
 
     /**
