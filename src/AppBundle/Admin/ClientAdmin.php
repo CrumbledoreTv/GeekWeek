@@ -53,11 +53,11 @@ class ClientAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-                  ->addIdentifier('societe_client')
-                  ->add('nom_client', 'text')
-                  ->add('telephone_contact_societe_client', 'text')
-                  ->add('mail_contact_societe_client', 'text')
-                  ->add('commentaire_client', 'text')
+                  ->addIdentifier('societe_client', null, array('label' => 'Societes'))
+                  ->add('nom_client', 'text', array('label' => 'Noms'))
+                  ->add('telephone_contact_societe_client', 'text', array('label' => 'Telephones'))
+                  ->add('mail_contact_societe_client', 'text', array('label' => 'Mails'))
+                  ->add('commentaire_client', 'text', array('label' => 'Commentaires'))
                   ;
     }
 

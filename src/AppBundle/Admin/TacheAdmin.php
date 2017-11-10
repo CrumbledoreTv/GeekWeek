@@ -44,11 +44,11 @@ class TacheAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-                  ->addIdentifier('libelle_tache', 'text')
-                  ->add('projet.libelle_projet')
-                  ->add('description_tache', 'text')
-                  ->add('status_tache', 'text')
-                  ->add('commentaire_tache', 'text')
+                  ->addIdentifier('libelle_tache', 'text', array('label' => 'Taches'))
+                  ->add('projet.libelle_projet', null, array('label' => 'Projets'))
+                  ->add('description_tache', 'text', array('label' => 'Descriptions'))
+                  ->add('status_tache', 'text', array('label' => 'Status'))
+                  ->add('commentaire_tache', 'text', array('label' => 'Commentaires'))
                   ;
     }
 

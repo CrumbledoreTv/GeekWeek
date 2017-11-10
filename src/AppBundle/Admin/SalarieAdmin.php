@@ -56,12 +56,12 @@ class SalarieAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-                  ->addIdentifier('nom_salarie')
-                  ->add('civilite_salarie', 'text')
-                  ->add('date_naissance_salarie', 'date')
-                  ->add('numero_securite_sociale_salarie', 'text')
-                  ->add('telephone_salarie', 'text')
-                  ->add('mail_salarie', 'text')
+                  ->addIdentifier('nom_salarie', null, array('label' => 'Noms'))
+                  ->add('civilite_salarie', 'text', array('label' => 'Civilites'))
+                  ->add('date_naissance_salarie', 'date', array('label' => 'Dates de naissance'))
+                  ->add('numero_securite_sociale_salarie', 'text', array('label' => 'Numeros securite sociale'))
+                  ->add('telephone_salarie', 'text', array('label' => 'Telephones'))
+                  ->add('mail_salarie', 'text', array('label' => 'Mails'))
                   ;
     }
 

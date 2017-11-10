@@ -5,6 +5,7 @@ namespace AppBundle\Admin;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
+use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use AppBundle\Entity\Projet;
 use AppBundle\Entity\Tache;
@@ -51,13 +52,30 @@ class ProjetAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-                  ->addIdentifier('libelle_projet')
-                  ->add('client.societe_client')
-                  ->add('date_debut_projet', 'date')
-                  ->add('date_fin_prevue_projet', 'date')
-                  ->add('responsable.nom_salarie')
-                  ->add('description_projet', 'text')
+                  ->addIdentifier('libelle_projet', null, array('label' => 'Projets'))
+                  ->add('client.societe_client', null, array('label' => 'Clients'))
+                  ->add('date_debut_projet', 'date', array('label' => 'Date debut'))
+                  ->add('date_fin_prevue_projet', 'date', array('label' => 'Date fin prevue'))
+                  ->add('responsable.nom_salarie', null, array('label' => 'Responsables'))
+                  ->add('description_projet', 'text', array('label' => 'Descriptions'))
+                  ->add('path', null, array('template' => 'AppBundle:Admin:list_image.html.twig'))
                   ;
+    }
+
+    public function configureShowFields(ShowMapper $showMapper)
+    {
+        $showMapper
+            ->tab('General')
+                ->with('Informations :', array(
+                    'class'       => 'col-md-8',
+                    'box_class'   => 'box box-solid box-danger',
+                ))
+                    ->add('libelle_projet')
+                    ->add('responsable.nom_salarie', null, array('label' => 'Responsable'))
+                    ->add('date_fin_prevue_projet', 'boolean')
+                ->end()
+            ->end()
+        ;
     }
 
     public function toString($object)
