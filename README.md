@@ -3,10 +3,7 @@ GeekWeek
 
 Concours recrutement BusiPart :
 
-
 Lien trello : https://trello.com/b/nWeZrWZT
-
-
 
 
 A faire à chaque déploiement :
@@ -24,3 +21,6 @@ $ php bin/console fos:user:promote admin ROLE_SONATA_ADMIN
 $ php bin/console faker:populate
 
 $ php bin/console server:start
+
+Compte admin : ID : admin
+               pwd : admin
