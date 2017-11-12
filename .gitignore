@@ -15,4 +15,4 @@
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
-!/web/bundles/sonataadmin/logo_title.png
+/web/bundles/sonataadmin/logo_title.png
