@@ -64,6 +64,20 @@ swiftmailer:
     password: '%mailer_password%'
     spool: { type: memory }
 
+bazinga_faker:
+    orm: doctrine
+    entities:
+        AppBundle\Entity\Client:
+            number: 50
+        AppBundle\Entity\Salarie:
+            number: 50
+        AppBundle\Entity\Projet:
+            number: 50
+        AppBundle\Entity\Tache:
+            number: 50
+            custom_formatters:
+               Isbn:   { method: word }
+
 # Sonota-admin Configuration
 sonata_block:
     default_contexts: [cms]

@@ -21,4 +21,6 @@ $ php bin/console fos:user:create admin admin@admin.com admin
 
 $ php bin/console fos:user:promote admin ROLE_SONATA_ADMIN
 
+$ php bin/console faker:populate
+
 $ php bin/console server:start

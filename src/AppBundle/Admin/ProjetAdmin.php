@@ -58,7 +58,6 @@ class ProjetAdmin extends AbstractAdmin
                   ->add('date_fin_prevue_projet', 'date', array('label' => 'Date fin prevue'))
                   ->add('responsable.nom_salarie', null, array('label' => 'Responsables'))
                   ->add('description_projet', 'text', array('label' => 'Descriptions'))
-                  ->add('path', null, array('template' => 'AppBundle:Admin:list_image.html.twig'))
                   ;
     }
 
@@ -72,7 +71,7 @@ class ProjetAdmin extends AbstractAdmin
                 ))
                     ->add('libelle_projet')
                     ->add('responsable.nom_salarie', null, array('label' => 'Responsable'))
-                    ->add('date_fin_prevue_projet', 'boolean')
+                    ->add('date_fin_prevue_projet', 'date')
                 ->end()
             ->end()
         ;
