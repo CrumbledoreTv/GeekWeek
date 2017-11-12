@@ -75,8 +75,6 @@ bazinga_faker:
             number: 50
         AppBundle\Entity\Tache:
             number: 50
-            custom_formatters:
-               Isbn:   { method: word }
 
 # Sonota-admin Configuration
 sonata_block:
